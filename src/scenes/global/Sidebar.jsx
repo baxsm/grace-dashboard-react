@@ -44,6 +44,7 @@ const Sidebar = () => {
 
     return (
         <Box
+            className="sidebarMain"
             sx={{
                 "& .pro-sidebar-inner": {
                     background: `${colors.primary[400]} !important`
@@ -62,9 +63,8 @@ const Sidebar = () => {
                 }
             }}
         >
-            <ProSidebar collapsed={isCollapsed}>
+            <ProSidebar collapsed={isCollapsed} className="sidebarProSlider">
                 <Menu iconShape="square">
-                    {/* LOGO AND MENU ICON */}
                     <MenuItem
                         onClick={() => setIsCollapsed(!isCollapsed)}
                         icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
@@ -118,7 +118,7 @@ const Sidebar = () => {
                         </Box>
                     )}
 
-                    <Box paddingLeft={isCollapsed ? undefined : "10%"}>
+                    <Box paddingLeft={isCollapsed ? undefined : "10%"} className="sidebarMenuItems">
                         <Item
                             title="Dashboard"
                             to="/"
